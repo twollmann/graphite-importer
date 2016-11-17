@@ -1,0 +1,16 @@
+carbon:
+  server: 'graphite.example.com'
+  port: 2003
+
+pingdom:
+  username: 'john@example.com'
+  password: 'mysecretpassword'
+  app_key: 'mysecretappkey'
+
+pingdom_checks:
+  - id: 1234567
+    name: 'www.example.com.http'
+    limit: 10
+  - id: 2345678
+    name: 'mail.example.com.smtp'
+    limit: 5
