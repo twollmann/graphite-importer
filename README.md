@@ -21,7 +21,7 @@ The following list contains all parameters that need to be set in the `carbon` s
   <tr>
     <td>server</td>
     <td>Graphite server</td>
-    <td>sample.example.com/td>
+    <td>sample.example.com</td>
   </tr>
   <tr>
     <td>port</td>
