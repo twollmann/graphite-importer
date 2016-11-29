@@ -14,3 +14,9 @@ pingdom_checks:
   - id: 2345678
     name: 'mail.example.com.smtp'
     limit: 5
+
+cloudflare:
+  - name: 'example.com'
+    email: 'cloudflare@example.com'
+    key: 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'
+    url: "https://api.cloudflare.com/client/v4/zones/a94a8fe5ccb19ba61c4c0873d391e987982fbbd3/analytics/dashboard?since=-1440&continuous=false"
