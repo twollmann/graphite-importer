@@ -1,10 +1,11 @@
 Graphite importer
 =================
-This repository contains a Graphite importer for Pingdom monitoring metrics.
+This repository contains a Graphite importer for Cloudflare and Pingdom metrics.
 
 Requirements
 ------------
 - Pingdom credentials including username, password and app-key
+- Cloudflare credentials including email address and api-key
 - Graphite server as target for the importer
 - Valid `config.yml` based on `config.yml.sample` in the current working directory
 
@@ -55,7 +56,36 @@ The following list contains all parameters that need to be set in the `pingdom` 
   </tr>
 </table>
 
-Pingdom Checks
+The following list contains all parameters that need to be set on the `cloudflare` section.
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Sample</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Name of the Cloudflare zone</td>
+    <td>example.com</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>E-mail address of your Cloudflare account</td>
+    <td>cloudflare@example.com</td>
+  </tr>
+  <tr>
+    <td>key</td>
+    <td>Cloudflare API key</td>
+    <td>a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</td>
+  </tr>
+  <tr>
+    <td>url</td>
+    <td>URL to Cloudflare analyticts dashboard</td>
+    <td>https://api.cloudflare.com/client/v4/zones/...</td>
+  </tr>
+
+Pingdom checks
 --------------
 The `pingdom_check` section in the `config.yml` is an array of dictonaries, where each dictonary represents one Pingdom check. The following list contains all parameters that need to be set for a Pingdom check.
 
@@ -81,6 +111,10 @@ The `pingdom_check` section in the `config.yml` is an array of dictonaries, wher
     <td>10</td>
   </tr>
 </table>
+
+Cloudflare checks
+-----------------
+There is no need to specify any checks for the Cloudflare importer. All metrics from the requests-, bandwidth- and threats-section will be gathered. However you can create multiple lists in the `cloudflare` section if you have more than one zone.
 
 Usage
 -----
